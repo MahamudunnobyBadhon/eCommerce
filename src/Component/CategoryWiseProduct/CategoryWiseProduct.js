@@ -24,7 +24,7 @@ const CategoryWiseProduct = () => {
       .catch(function (err) {
         console.log(err);
       });
-  });
+  }, []);
 
   const handleCategory = (c) => {
     setIsLoading(true);

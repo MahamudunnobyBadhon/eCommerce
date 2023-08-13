@@ -13,6 +13,9 @@ const Navbar = () => {
   const [totalPayablePrice, settotalPayablePrice] = useState(0);
   const { user, toggle, settoggle } = useContext(AuthContext);
   const navigate = useNavigate();
+
+
+  console.log("toggle", toggle)
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartdata(cart);

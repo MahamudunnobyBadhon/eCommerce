@@ -7,6 +7,7 @@ import PurchaseHistory from "../Pages/PurchaseHistory/PurchaseHistory";
 import Profile from "../Pages/UserProfile/Profile";
 import CRUDProduct from "../Pages/Admin/CRUDProduct/CRUDProduct";
 import SearchProducts from "../Component/SearchProducts/SearchProducts";
+import Admin from "../Pages/Admin/Admin";
 const { createBrowserRouter } = require("react-router-dom");
 
 const router = createBrowserRouter([
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/adminPage",
-        element: <CRUDProduct></CRUDProduct>,
+        element: <Admin></Admin>,
       },
     ],
   },

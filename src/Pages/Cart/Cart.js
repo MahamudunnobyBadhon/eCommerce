@@ -8,10 +8,10 @@ import { plus } from "../../SharedComponent/SVGicons/Plus";
 const Cart = () => {
   const [nodata, setNodata] = useState(true);
   const [data, setdata] = useState([]);
-  const [toggle, setToggle] = useState(true);
+  // const [toggle, setToggle] = useState(true);
   const [totalPayablePrice, settotalPayablePrice] = useState(0);
   const [userData, setUserData] = useState([]);
-  const { user } = useContext(AuthContext);
+  const { user, toggle, settoggle } = useContext(AuthContext);
 
   useEffect(() => {
     setUserData(JSON.parse(localStorage.getItem("userid")));
@@ -35,7 +35,7 @@ const Cart = () => {
 
   const handleminus = (id) => {
     const localCart = JSON.parse(localStorage.getItem("cart"));
-    console.log("minus");
+    console.log("minus", toggle);
 
     localCart.map((singleCart, i) => {
       if (id === singleCart.id) {
@@ -47,7 +47,7 @@ const Cart = () => {
             payableprice: singleCart.price * (singleCart.quantity - 1),
           };
           localStorage.setItem("cart", JSON.stringify(localCart));
-          setToggle(!toggle);
+          settoggle(!toggle);
         } else if (singleCart.quantity === 1) {
           let result = window.confirm("Are you sure want to delete?");
 
@@ -56,11 +56,14 @@ const Cart = () => {
             localCart.splice(i, 1);
 
             localStorage.setItem("cart", JSON.stringify(localCart));
-            setToggle(!toggle);
+            settoggle(!toggle);
           }
         }
       }
     });
+
+    console.log("minus", toggle);
+
   };
   const handleplus = (id) => {
     const localCart = JSON.parse(localStorage.getItem("cart"));
@@ -74,13 +77,13 @@ const Cart = () => {
           payableprice: singleCart.price * (singleCart.quantity + 1),
         };
         localStorage.setItem("cart", JSON.stringify(localCart));
-        setToggle(!toggle);
+        settoggle(!toggle);
       }
     });
   };
 
   return (
-    <div className="max-w-screen-lg mx-auto mt-5">
+    <div className="max-w-screen-lg mx-auto mt-5 mb-36">
       <h2
         style={{
           textAlign: "center",
