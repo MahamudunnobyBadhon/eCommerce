@@ -4,7 +4,7 @@ This e-commerce site is an online platform that allows users to browse and purch
 
 ## Live link
 
-https://lucky-sawine-aaafe6.netlify.app
+[https://lucky-sawine-aaafe6.netlify.app](https://64d91186c63d74338fac6352--bejewelled-taiyaki-254a26.netlify.app/)
 
 ## Key Features
 
